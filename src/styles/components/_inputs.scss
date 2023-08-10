@@ -1,0 +1,17 @@
+.input-wrapper {
+    border: 1px solid var(--clr-primary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    // height: 3.125rem;
+
+    input {
+        // padding: .375rem .75em;
+        padding: 1rem;
+        font-size: var(--fz-mid);
+        font-weight: var(--fw-reg);
+
+        &::placeholder {
+            text-transform: capitalize;
+        }
+    }
+}

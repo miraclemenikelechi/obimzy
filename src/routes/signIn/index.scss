@@ -1,0 +1,66 @@
+@use "../../styles/base/mixins"as *;
+@use "../../styles/views/form"as *;
+@use "../../styles/components/inputs"as *;
+
+.signIn {
+    @include max-w(650px);
+    @include equal(100%);
+    @include flex;
+    padding: 12rem 4rem;
+
+    &-wrapper {
+        @include equal(100%);
+
+        >h3 {
+            text-transform: capitalize;
+            font-size: var(--fz-b-mid);
+            margin-bottom: .625rem;
+            font-weight: var(--fw-mid);
+        }
+
+        >hr {
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    .form-wrapper {
+        @include flex($d:column);
+        gap: 1.25rem;
+
+    }
+    
+    .form-input {
+        width: 100%;
+
+        button {
+            @include flex;
+            padding: 1.1rem;
+            text-transform: capitalize;
+            border-radius: .625rem;
+            font-size: var(--fz-mid);
+            background-color: var(--clr-primary);
+            color: var(--clr-white);
+            font-weight: var(--fw-sbd);
+        }
+    }
+    .middle-content {
+        margin-block: 1rem;
+        @include flex;
+        gap: 1rem;
+
+        hr {
+            width: 100%;
+            background-color: var(--clr-text-secondary);
+        }
+
+        span {
+            text-transform: uppercase;
+            color: var(--clr-text-secondary);
+            font-weight: var(--fw-sbd);
+        }
+    }
+
+    .bottom-content{
+
+    }
+}

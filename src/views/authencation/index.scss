@@ -1,0 +1,25 @@
+@use "../../styles/base/mixins"as *;
+
+.auth-container {
+    height: 100vh;
+    @include flex;
+
+    >div {
+        // @include flex;
+        // width: 100%;
+        // max-width: 1280px;
+
+        @include min-w(1280px);
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .auth-wrapper {
+        // height: 832px;
+        // @include max-w(650px);
+        padding: 4rem 0;
+        @include flex;
+        border: 1px solid yellow;
+    }
+}
