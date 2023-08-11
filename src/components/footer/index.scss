@@ -1,0 +1,118 @@
+@use "../../styles/base/mixins"as *;
+
+.footer {
+    width: 100%;
+    padding: 3.5rem 5rem;
+    margin-top: -1.25rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+
+    &-wrapper {
+        @include flex($a:flex-start, $j:space-between);
+        gap: 10.625rem;
+    }
+
+    &-left {
+        @include flex($d:column, $a:flex-start);
+
+        .logo {
+            @include flex;
+            @include equal(6.25rem);
+            overflow: hidden;
+
+            img {
+                scale: 2;
+            }
+        }
+
+        >h5 {
+            margin: .625rem 0 3.125rem 0;
+            width: 23.75rem;
+            font-size: var(--fz-ms);
+            font-weight: var(--fw-reg);
+            line-height: 1.875rem;
+        }
+
+        .socials {
+            @include flex($d:column);
+            gap: 1.25rem;
+
+            h6 {
+                font-size: var(--fz-sm);
+                text-transform: capitalize;
+                font-weight: var(--fw-mid);
+            }
+
+            div {
+                @include flex;
+                gap: 1.25rem;
+
+                span {
+                    @include flex;
+                    @include equal(3.125rem);
+                    border-radius: 50%;
+                    border: 1px solid var(--clr-white);
+                }
+            }
+        }
+    }
+
+    &-right {
+        @include flex($d:column);
+        gap: 3.4375rem;
+        flex: 1;
+
+        .top {
+            @include flex;
+            gap: 3.125rem;
+
+            article {
+                @include flex($d:column);
+                gap: .875rem;
+
+                div {
+                    @include equal(3.125rem);
+                    @include flex;
+                    border: 1px solid var(--clr-white);
+                    border-radius: 50%;
+
+                    span {
+                        @include flex;
+                    }
+                }
+
+                >span {
+                    font-size: var(--fz-sm);
+                    font-weight: var(--fw-mid);
+                }
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            @include flex($j:space-between, $a:flex-start);
+
+            div {
+                @include flex($d:column, $a:flex-start);
+                gap: 1.25rem;
+
+                h6 {
+                    font-size: var(--fz-sm);
+                    text-transform: capitalize;
+                    font-weight: var(--fw-mid);
+                }
+
+                ul {
+                    @include flex($d:column, $a:flex-start);
+                    gap: 1.125rem;
+
+                    li {
+                        text-transform: capitalize;
+                        font-weight: var(--fw-reg);
+                        font-size: var(--fz-xs);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { Authentication } from "./views";
+import { Authentication, Footer } from "./views";
 import { SignIn, SignUp } from "./routes";
+import { NavBar } from "./components";
 
 
 function App() {
@@ -8,7 +9,13 @@ function App() {
   const
 
     Layout = () => {
-      return;
+      return (
+        <>
+          <NavBar />
+          <Outlet />
+          <Footer />
+        </>
+      );
     },
 
     Auth = () => {

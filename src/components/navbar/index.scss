@@ -1,0 +1,81 @@
+@use "../../styles/base/mixins"as *;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+.navbar {
+    width: 100%;
+    padding: .9375rem 4.375rem;
+    box-shadow: 0 .25rem .625rem 0 rgba(0, 0, 0, .25);
+
+    &-wrapper {
+        @include equal(100%);
+        @include flex($j:space-between);
+    }
+
+    .logo {
+        @include flex;
+        @include equal(6.25rem);
+        overflow: hidden;
+
+        img {
+            scale: 2;
+        }
+    }
+
+    nav {
+        @include flex;
+        gap: 2.5rem;
+
+        .nav-item {
+            a {
+                font-size: var(--fz-mds);
+                text-transform: capitalize;
+                font-weight: var(--fw-reg);
+                color: var(--clr-text-secondary);
+
+                &.active {
+                    color: var(--clr-primary);
+                }
+            }
+        }
+    }
+
+    .buttons {
+        @include flex;
+        gap: .75rem;
+
+        &-left,
+        &-right {
+            button {
+                background-color: transparent;
+                border-radius: var(--radius);
+
+                a {
+                    padding-block: 1rem;
+                    text-transform: capitalize;
+                    font-size: var(--fz-xs);
+                    font-weight: var(--fw-mid);
+                    font-family: 'Rubik',
+                        sans-serif;
+                }
+            }
+        }
+
+        &-left>button {
+            color: var(--clr-primary);
+            border: 1px solid var(--clr-primary);
+
+            a {
+                padding-inline: 1rem;
+            }
+        }
+
+        &-right>button {
+            background-color: var(--clr-primary);
+            color: var(--clr-white);
+
+            a {
+                padding-inline: 2.75rem;
+            }
+        }
+    }
+}

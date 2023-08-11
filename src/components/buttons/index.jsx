@@ -8,8 +8,8 @@ export const
         return (
             <button type={type}>
                 {/* <Link to={to}> */}
-                    <span>{icon}</span>
-                    <span>{title}</span>
+                {icon && <span>{icon}</span>}
+                {title && <span>{title}</span>}
                 {/* </Link> */}
             </button>
         );
@@ -19,8 +19,8 @@ export const
         return (
             <button>
                 <Link to={to}>
-                    <span>{title}</span>
-                    <span>{icon}</span>
+                    {title && <span>{title}</span>}
+                    {icon && <span>{icon}</span>}
                 </Link>
             </button>
         );
