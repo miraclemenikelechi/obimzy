@@ -1,11 +1,11 @@
 const express = require("express");
-const errorHandler = require("./middleware/errorhandler");
 const connectDb = require("./config/dbConnection");
 const cors = require("cors");
-const { logger } = require("./middleware/logEvents");
+const { logger } = require("./middlewares/logEvents");
 const { corsOptions } = require("./config/corsOptions");
 const cookieParser = require("cookie-parser");
-const credentials = require("./middleware/credentials");
+const credentials = require("./middlewares/credentials");
+const errorHandler = require("./middlewares/errorHandler");
 
 // this is used to set the port to the port declared in the env file
 const dotenv = require("dotenv").config();
@@ -31,8 +31,8 @@ app.use(express.json());
 app.use(cookieParser());
 // middle ware for handling routing
 app.use("/api/users", require("./routes/userRoutes"));
-app.use("/refresh", require("./routes/refreshTokenRoute"));
-app.use("/logout", require("./routes/logOutRoute"));
+app.use("/api/refresh", require("./routes/refreshTokenRoute"));
+app.use("/api/logout", require("./routes/logOutRoute"));
 
 // middle ware for handling error code
 app.use(errorHandler);

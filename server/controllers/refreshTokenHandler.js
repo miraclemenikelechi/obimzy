@@ -4,9 +4,10 @@ const User = require("../models/userModel");
 
 // refresh API
 const handleRefreshToken = expressAsyncHandler(async (req, res) => {
+  console.log(req.cookies);
   const cookies = req.cookies;
   if (!cookies?.jwt) return res.sendStatus(401);
-  // console.log(cookies.jwt);
+
   const refreshToken = cookies.jwt;
   const userAvaible = await User.findOne({ refreshToken });
   if (!userAvaible) return res.sendStatus(403); //Forbidden
