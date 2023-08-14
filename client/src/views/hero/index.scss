@@ -1,0 +1,120 @@
+@use "../../styles/base/mixins"as *;
+
+.hero {
+    color: var(--clr-white);
+    padding: 6rem 4.375rem 1.25rem 4.375rem;
+    height: calc(100vh - 100px);
+    position: relative;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+        url("/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+
+    .top-content {
+        margin-bottom: 3.4375rem;
+
+        h1 {
+            font-size: var(--fz-xl);
+            font-weight: var(--fw-mid);
+            margin-bottom: .3125rem;
+        }
+
+        p {
+            margin-top: .3125rem;
+            font-size: var(--fz-md);
+            line-height: 2.8125rem;
+            font-weight: var(--fw-reg);
+        }
+    }
+
+    .middle-content {
+        width: 985px;
+        border-radius: var(--radius);
+        padding: 2.1875rem;
+        background-color: var(--clr-white);
+
+        .content-wrapper {
+            @include flex($j:space-between);
+
+            .left {
+                background-color: var(--clr-primary);
+                border-radius: var(--radius);
+
+                button {
+                    background-color: transparent;
+                    @include flex;
+                    gap: .5rem;
+                    padding: 1rem;
+                    color: var(--clr-white);
+                    font-family: var(--font-rubik);
+                    text-transform: capitalize;
+                    font-size: var(--fz-ms);
+
+                    span {
+                        @include flex;
+                    }
+                }
+            }
+
+            .center {
+                color: var(--clr-text-secondary);
+                font-size: var(--fz-mds);
+                @include flex;
+                gap: .5rem;
+
+                span {
+                    @include flex;
+                }
+            }
+
+            .right {
+                @include flex;
+                gap: .75rem;
+
+                span {
+                    @include flex;
+                }
+
+                input {
+                    font-size: var(--fz-mds);
+                    font-weight: var(--fw-reg);
+                }
+            }
+        }
+    }
+
+    .bottom-content {
+        margin-top: 10.625rem;
+        padding-inline: 4.375rem;
+        @include flex($j:space-between);
+
+        .card-wrapper {
+            @include flex($d:column);
+            gap: 2rem;
+            padding: 1.625rem 1.25rem;
+            background-color: var(--clr-white);
+            width: 250px;
+            height: 200px;
+            border-radius: var(--radius);
+
+            span {
+                @include flex;
+
+                &:first-of-type {
+                    @include equal(4.375rem);
+                    border: 1px solid var(--clr-primary);
+                    border-radius: 50%;
+                }
+
+                &:last-of-type {
+                    color: var(--clr-primary);
+                    text-transform: capitalize;
+                    font-size: var(--fz-mds);
+                    font-weight: var(--fw-reg);
+                }
+            }
+        }
+    }
+}

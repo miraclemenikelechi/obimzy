@@ -1,6 +1,6 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Authentication, Footer } from "./views";
-import { SignIn, SignUp } from "./routes";
+import { Home, SignIn, SignUp } from "./routes";
 import { NavBar } from "./components";
 
 
@@ -35,9 +35,9 @@ function App() {
         element: <Layout />,
         children: [
           {
-            path: "",
-            element: "",
-          }
+            path: "/",
+            element: <Home />,
+          },
         ]
       },
 

@@ -1,5 +1,4 @@
 @use "../../styles/base/mixins"as *;
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 .navbar {
     width: 100%;
@@ -54,8 +53,7 @@
                     text-transform: capitalize;
                     font-size: var(--fz-xs);
                     font-weight: var(--fw-mid);
-                    font-family: 'Rubik',
-                        sans-serif;
+                    font-family: var(--font-rubik)
                 }
             }
         }

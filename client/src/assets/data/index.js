@@ -148,4 +148,27 @@ export const
             icon: "Video",
             title: "Video Chat",
         },
+    ],
+
+    hero = [
+        {
+            id: 0,
+            icon: "Home",
+            title: "home inspections",
+        },
+        {
+            id: 1,
+            icon: "Insurance",
+            title: "property insurance",
+        },
+        {
+            id: 2,
+            icon: "Location",
+            title: "best locations",
+        },
+        {
+            id: 3,
+            icon: "Land",
+            title: "lots & lands",
+        },
     ];
